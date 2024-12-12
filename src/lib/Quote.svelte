@@ -1,10 +1,14 @@
 <script>
-	export let author = 'John Doe';
+  import '../app.css';
+
+  export let author = '';
 </script>
 
 <blockquote>
 	<p><slot /></p>
-	<footer>{author}</footer>
+  {#if author != ''}
+    <div class="pe-3 font-medium text-gray-900 dark:text-white">{author}</div>
+  {/if}
 </blockquote>
 
 <style lang="scss">

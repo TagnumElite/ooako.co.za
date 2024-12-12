@@ -1,7 +1,7 @@
 <script>
-	import '../app.css'
+  import '../app.css';
 
-	export let data;
+  export let data;
 </script>
 
 <header>
