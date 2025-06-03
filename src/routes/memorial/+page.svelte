@@ -1,5 +1,7 @@
 <script>
+  import Container from '$lib/Container.svelte';
   import Gallery from '$lib/Gallery.svelte';
+  import Jumbotron from '$lib/Jumbotron.svelte';
   import YouTubeEmbed from '$lib/YoutubeEmbed.svelte';
 
   let pics = [
@@ -20,38 +22,20 @@
   ];
 </script>
 
-<div class="container video">
-  <div class="title">
-    <h1>Linda Hoyle's Memorial</h1>
+<Jumbotron img="/memorial/stand.jpg" title="Linda Hoyle's Memorial">
+  <h1>Linda Hoyle's Memorial</h1>
+  <p>A celebration of a life well lived.</p>
+</Jumbotron>
+<Container>
+  <div class="min-h-dvh w-4/5 mx-auto">
+    <div class="text-4xl pt-2 pb-4 text-center">
+      <h1>Linda Hoyle's Memorial Livestream VOD (17-04-2024)</h1>
+    </div>
+    <div class="p-1 bg-black mx-3 rounded-md">
+      <YouTubeEmbed url="https://www.youtube-nocookie.com/embed/WTRzrZ46TR0?si=Bc0SkmgMBGiOl8xa" />
+    </div>
   </div>
-  <div class="container">
-    <YouTubeEmbed url="https://www.youtube-nocookie.com/embed/WTRzrZ46TR0?si=Bc0SkmgMBGiOl8xa" />
-  </div>
-</div>
-<div class="container">
+</Container>
+<Container>
   <Gallery pictures={pics} />
-</div>
-
-<style lang="scss">
-  .container {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    text-align: center;
-  }
-  .video {
-    min-height: 100vh;
-    width: 100%;
-
-    .title {
-      font-size: 2rem;
-    }
-
-    .container {
-      background-color: rgb(0, 0, 0);
-      padding: 5px;
-      border-radius: 5px;
-      margin-left: 10px;
-      margin-right: 10px;
-    }
-  }
-</style>
+</Container>
