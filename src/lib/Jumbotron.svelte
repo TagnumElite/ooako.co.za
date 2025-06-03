@@ -9,8 +9,8 @@
   export let subtitle = null;
 </script>
 
-<div class="container">
-  <div class="jumbotron bg-center md:bg-right-top" style="background-image: url({img})">
+<div class="container bg-center md:bg-right-top" style="background-image: url({img})">
+  <div class="jumbotron">
     <div class="title">
       <p>{title}</p>
       {#if subtitle}
