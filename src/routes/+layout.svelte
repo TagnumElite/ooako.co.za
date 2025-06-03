@@ -4,56 +4,100 @@
   export let data;
 </script>
 
-<header>
-	<div id="logo">
-		<abbr title="One Of A Kind Original">OOAKO</abbr>
-	</div>
-	<nav class="navbar">
-		<ul>
-			{#each data.nav as nav}
-				<li><a href={nav[1]}>{nav[0]}</a></li>
-			{/each}
-		</ul>
-	</nav>
+<header
+  class="bg-black text-white dark:bg-gray-300 dark:text-black sticky top-0 border-solid border-blue-400 border-b-4"
+>
+  <nav class="flex mx-auto items-center justify-between p-4">
+    <a class="flex content-center" href="https://ooako.co.za">
+      <abbr class="no-underline text-3xl bold pr-2" title="One Of A Kind Original">OOAKO</abbr>
+      <img class="h-8" src="logo-blue.jpg" alt="One Of A Kind Original" />
+    </a>
+    <ul
+      class="flex flex-wrap items-center justify-between space-x-3 rtl:space-x-reverse list-none p-0"
+    >
+      {#each data.nav as nav}
+        <li class="inline m-2">
+          <a class="transition-colors hover:text-blue-400 dark:hover:text-blue-800" href={nav[1]}
+            >{nav[0]}</a
+          >
+        </li>
+      {/each}
+    </ul>
+  </nav>
 </header>
-<main>
-	<slot />
+<main class="min-h-screen">
+  <slot />
 </main>
-<footer>
-	<div id="socials" class="socials">
-		{#each data.socials as social}
-			<div class="social {social.slug}">
-				<a href={social.href}
-					><img
-						alt={social.name}
-						height="32"
-						width="32"
-						src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/{social.slug}.svg"
-					/></a
-				>
-			</div>
-		{/each}
-	</div>
-	<div class="links" id="footer-links"></div>
-	<div class="dev-info">
-		<p>
-			Created/Maintained by <a href="https://tagnumelite.com">Tagan Hoyle</a>. Powered by
-			<a href="https://kit.svelte.dev/">SvelteKit</a>
-			using <a href="https://pages.cloudflare.com/">Cloudfare Pages</a>.
-		</p>
-	</div>
+<footer
+  class="text-center w-screen text-white bg-black py-2 border-solid border-t-4 border-blue-400"
+>
+  <div id="socials" class="inline-flex">
+    {#each data.socials as social}
+      <div class="social {social.slug} p-3">
+        <a href={social.href} target="_blank"
+          ><img
+            alt={social.name}
+            height="32"
+            width="32"
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/{social.slug}.svg"
+          /></a
+        >
+      </div>
+    {/each}
+  </div>
+  <div class="" id="footer-links"></div>
+  <div id="dev-info" class="text-gray-400">
+    <p>
+      Created/Maintained by <a class="transition-all hover:font-bold" href="https://tagnumelite.com"
+        >Tagan Hoyle</a
+      >. Powered by
+      <a href="https://kit.svelte.dev/">SvelteKit</a>
+      using <a href="https://pages.cloudflare.com/">Cloudfare Pages</a>.
+    </p>
+  </div>
 </footer>
 
 <style lang="scss">
-	abbr[title] {
-		border-bottom: none !important;
-		cursor: inherit !important;
-		text-decoration: none !important;
-	}
+  .social {
+    img {
+      transition: filter 0.4s ease-in-out;
+      filter: invert(99%) sepia(6%) saturate(571%) hue-rotate(222deg) brightness(119%)
+        contrast(100%);
+    }
 
+    a:hover img {
+      filter: invert(65%) sepia(68%) saturate(3793%) hue-rotate(136deg) brightness(107%)
+        contrast(101%);
+    }
+
+    &.pinterest a:hover img {
+      filter: invert(14%) sepia(98%) saturate(4590%) hue-rotate(351deg) brightness(87%)
+        contrast(97%);
+    }
+
+    &.facebook a:hover img {
+      filter: invert(35%) sepia(49%) saturate(3706%) hue-rotate(202deg) brightness(98%)
+        contrast(94%);
+    }
+
+    &.instagram a:hover img {
+      filter: invert(29%) sepia(22%) saturate(4992%) hue-rotate(295deg) brightness(95%)
+        contrast(90%);
+    }
+  }
+
+  #dev-info {
+    a {
+      text-decoration: none;
+      color: #444444;
+
+      &:hover {
+        color: #b1b1b1;
+      }
+    }
+  }
+  /*
 	header {
-		position: fixed;
-		top: 0;
 		left: 0;
 		right: 0;
 		text-align: center;
@@ -80,66 +124,6 @@
 		.navbar {
 			float: right;
 			height: 100%;
-
-			ul {
-				list-style: none;
-				padding: 0;
-			}
-
-			li {
-				display: inline;
-				margin-right: 10px;
-			}
 		}
-	}
-
-	main {
-		margin-top: 3rem;
-		padding-top: 1rem;
-		min-height: 70vh;
-	}
-
-	footer {
-		text-align: center;
-		width: 100%;
-		border-top: 6px solid blue;
-		color: #fff;
-		background-color: #000;
-		padding-bottom: 3rem;
-		padding-top: 3rem;
-
-		.socials {
-			display: inline-flex;
-
-			.social {
-				padding: 12px;
-
-				img {
-					filter: invert(99%) sepia(6%) saturate(571%) hue-rotate(222deg) brightness(119%)
-						contrast(100%);
-				}
-
-				a:hover img {
-					filter: invert(65%) sepia(68%) saturate(3793%) hue-rotate(136deg) brightness(107%)
-						contrast(101%);
-				}
-			}
-		}
-
-		.links {
-		}
-
-		.dev-info {
-			color: #adadad;
-
-			a {
-				text-decoration: none;
-				color: #444444;
-
-				&:hover {
-					color: #b1b1b1;
-				}
-			}
-		}
-	}
+	}*/
 </style>
