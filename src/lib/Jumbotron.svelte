@@ -51,8 +51,13 @@
         }
       }
 
-      .info p {
-        text-shadow: 1px 1px #000;
+      .info {
+        margin-top: 1rem;
+
+        :global(p) {
+          font-size: 1.2rem;
+          text-shadow: 0.1em 0.1em #000;
+        }
       }
     }
   }
