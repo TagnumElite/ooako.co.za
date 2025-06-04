@@ -8,9 +8,9 @@
 
 <Jumbotron img="/main-jumbo.png" title="Linda A. Hoyle" subtitle="1952-2024 (72 years)">
   <p>Though brushes rest and colors fade to gray,</p>
-<p>Her vibrant soul still dances in the light.</p>
-<p>She lived her truth in every bold display,</p>
-<p>A life well-lived, now shining out of sight.</p>
+  <p>Her vibrant soul still dances in the light.</p>
+  <p>She lived her truth in every bold display,</p>
+  <p>A life well-lived, now shining out of sight.</p>
 </Jumbotron>
 <!-- <div class="jumbotron">
   <div class="container">
