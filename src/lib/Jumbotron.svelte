@@ -56,7 +56,7 @@
 
         :global(p) {
           font-size: 1.2rem;
-          text-shadow: 0.1em 0.1em #000;
+          text-shadow: 0.1em 0.1em 0.1em #000;
         }
       }
     }
