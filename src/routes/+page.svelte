@@ -4,6 +4,7 @@
   import Jumbotron from '$lib/Jumbotron.svelte';
   import Quote from '$lib/Quote.svelte';
   import Grid from '$lib/Grid.svelte';
+  import Container from '$lib/Container.svelte';
 </script>
 
 <Jumbotron img="/main-jumbo.png" title="Linda A. Hoyle" subtitle="1952-2024 (72 years)">
@@ -27,24 +28,27 @@
     </div>
   </div>
 </div> -->
-<Grid>
-  <Quote author="Andrew H">
-    My wife for over 50 years and my best friend through it all. She always complained about the
-    mess I left but otherwise, she has always been friendly and happy.
-  </Quote>
-  <Quote author="Tagan H">
-    I never treated granny the way a grandson should've but she still took care of me, clothed me
-    and fed me. I was never without shelter, food and clothes. She made sure everyone was taken care
-    of.
-  </Quote>
-  <Quote author="Lee H">Mom never stopped caring and worrying about me, she will be missed.</Quote>
-  <Quote author="Zara DB">
-    Your life was a masterpiece, painted with vibrant hues of love and joy. In every step we take
-    and every song we hear, your spirit dances alongside us, a beautiful reminder of the joy you
-    brought into our lives.
-  </Quote>
-  <Quote author="Jacques DB">Linda was a great mother-in-law!</Quote>
-</Grid>
+<Container>
+  <Grid>
+    <Quote author="Andrew H">
+      My wife for over 50 years and my best friend through it all. She always complained about the
+      mess I left but otherwise, she has always been friendly and happy.
+    </Quote>
+    <Quote author="Tagan H">
+      I never treated granny the way a grandson should've but she still took care of me, clothed me
+      and fed me. I was never without shelter, food and clothes. She made sure everyone was taken
+      care of.
+    </Quote>
+    <Quote author="Lee H">Mom never stopped caring and worrying about me, she will be missed.</Quote
+    >
+    <Quote author="Zara DB">
+      Your life was a masterpiece, painted with vibrant hues of love and joy. In every step we take
+      and every song we hear, your spirit dances alongside us, a beautiful reminder of the joy you
+      brought into our lives.
+    </Quote>
+    <Quote author="Jacques DB">Linda was a great mother-in-law!</Quote>
+  </Grid>
+</Container>
 <!-- 
 <style lang="scss">
   .jumbotron {
